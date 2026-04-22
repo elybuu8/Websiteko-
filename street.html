@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elli's Website - Street Photography</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family:'Poppins', sans-serif;
+    background:#111;
+    color:#fff;
+    overflow-x:hidden;
+    position:relative;
+}
+
+/* STARS */
+.star {
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:#ff0000;
+    border-radius:50%;
+    opacity:0.7;
+    animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+    0% { transform:scale(1); opacity:0.3; }
+    50% { transform:scale(1.5); opacity:1; }
+    100% { transform:scale(1); opacity:0.3; }
+}
+
+/* HEADER */
+header {
+    background:#000;
+    padding:40px 20px;
+    border-bottom:2px solid #ff0000;
+    text-align:center;
+}
+
+header h1 {
+    font-family:'Orbitron',sans-serif;
+    font-size:40px;
+    color:#ff0000;
+}
+
+/* NAV */
+nav { margin-top:20px; }
+
+.nav-btn {
+    position:relative;
+    display:inline-block;
+    margin:8px;
+    padding:12px 24px;
+    background:linear-gradient(135deg,#ff0000,#990000);
+    color:#fff;
+    text-decoration:none;
+    border-radius:8px;
+    font-family:'Orbitron',sans-serif;
+    box-shadow:0 0 10px #ff0000;
+    transition:0.3s;
+    overflow:hidden;
+}
+
+/* SHINE EFFECT */
+.nav-btn::after {
+    content:'';
+    position:absolute;
+    top:0;
+    left:-150%;
+    width:50%;
+    height:100%;
+    background:linear-gradient(120deg,transparent,rgba(255,255,255,0.6),transparent);
+    transform:skewX(-25deg);
+    animation:shine 2s infinite;
+}
+
+@keyframes shine {
+    0% { left:-150%; }
+    100% { left:150%; }
+}
+
+.nav-btn:hover {
+    background:#000;
+    color:#ff0000;
+    transform:translateY(-3px);
+}
+
+/* SECTION */
+section {
+    max-width:900px;
+    margin:40px auto;
+    padding:30px;
+    background:rgba(255,0,0,0.08);
+    border-radius:12px;
+    box-shadow:0 0 20px #ff0000;
+}
+
+/* BIG IMAGE */
+.big-img {
+    width:100%;
+    max-height:500px;
+    object-fit:cover;
+    border-radius:12px;
+    box-shadow:0 0 20px #ff0000;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.big-img:hover {
+    transform:scale(1.01);
+    box-shadow:0 0 30px #ff0000;
+}
+
+/* TEXT */
+.desc {
+    margin-top:25px;
+    font-size:18px;
+    line-height:1.8;
+    text-align:justify;
+}
+
+/* THUMB GRID CENTERED */
+.thumb-grid {
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    margin-top:30px;
+    flex-wrap:wrap;
+}
+
+/* EACH THUMB ITEM */
+.thumb-item {
+    text-align:center;
+    width:160px;
+}
+
+/* THUMB IMAGE */
+.thumb {
+    width:160px;
+    height:160px;
+    object-fit:cover;
+    border-radius:10px;
+    box-shadow:0 0 10px #ff0000;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.thumb:hover {
+    transform:scale(1.05);
+}
+
+/* TITLE UNDER IMAGE */
+.thumb-title {
+    margin-top:8px;
+    font-size:14px;
+    color:#ff4d4d;
+    font-family:'Orbitron',sans-serif;
+    text-shadow:0 0 5px #ff0000;
+}
+
+/* LIGHTBOX */
+#lightbox {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.9);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+}
+
+#lightbox img {
+    max-width:90%;
+    max-height:90%;
+    border-radius:10px;
+    box-shadow:0 0 20px #ff0000;
+}
+
+/* FOOTER */
+footer {
+    background:#000;
+    padding:20px;
+    text-align:center;
+    border-top:2px solid #ff0000;
+    margin-top:40px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .thumb-item { width:45%; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- STARS -->
+<script>
+for(let i=0;i<50;i++){
+    let star=document.createElement('div');
+    star.className='star';
+    star.style.top=Math.random()*100+'%';
+    star.style.left=Math.random()*100+'%';
+    document.body.appendChild(star);
+}
+</script>
+
+<header>
+    <h1>Street Photography</h1>
+
+    <nav>
+        <a href="index.html" class="nav-btn"><span>Home</span></a>
+        <a href="about.html" class="nav-btn"><span>About Me</span></a>
+        <a href="contacts.html" class="nav-btn"><span>Contacts / SocMed</span></a>
+        <a href="goals.html" class="nav-btn"><span>My Goals</span></a>
+        <a href="envi.html" class="nav-btn"><span>My Environment</span></a>
+        <a href="future.html" class="nav-btn"><span>My Future Me</span></a>
+        <a href="street.html" class="nav-btn"><span>Street Photography</span></a>
+        <a href="brand.html" class="nav-btn"><span>My brand, My logo</span></a>
+        <a href="thankyou.html" class="nav-btn"><span>Thank you</span></a>
+    </nav>
+</header>
+
+<section>
+
+    <!-- BIG IMAGE -->
+    <img src="Elli.jpg" class="big-img" onclick="openLightbox(this.src)">
+
+    <!-- TEXT -->
+    <p class="desc">
+        1. My photo tells the story of the daily lives of SMMC Students, even if under the harsh midday sun, students in blue uniforms walked steadily down the gate, raising their umbrellas against the heat but also against the weight of their daily struggles as a student. Together, they moved forward with quiet determination, knowing that every step, no matter how exhausting, was bringing them closer to a better future.
+        <br><br>
+        2. I chose this because I am a student as well, I could depict and understand the level of challenges we face everyday just to graduate.
+        <br><br>
+        3. The photo is effective because of lighting, composition, timing, and emotion.
+        <br><br>
+        4. The challenge was the extreme heat and timing the perfect moment.
+        <br><br>
+        5. I will improve my photography skills and try different lighting conditions next time.
+    </p>
+
+    <!-- THUMBNAILS -->
+    <div class="thumb-grid">
+
+        <div class="thumb-item">
+            <img src="elli3.jpeg" class="thumb" onclick="openLightbox(this.src)">
+            <div class="thumb-title">Student Interaction</div>
+        </div>
+
+        <div class="thumb-item">
+            <img src="elli2.jpeg" class="thumb" onclick="openLightbox(this.src)">
+            <div class="thumb-title">Candid Scenes</div>
+        </div>
+
+        <div class="thumb-item">
+            <img src="elli1.jpeg" class="thumb" onclick="openLightbox(this.src)">
+            <div class="thumb-title">Emotional Moments</div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img">
+</div>
+
+<footer>
+    &copy; 2026 Elli's Website
+</footer>
+
+<script>
+function openLightbox(src){
+    document.getElementById("lightbox").style.display="flex";
+    document.getElementById("lightbox-img").src=src;
+}
+
+function closeLightbox(){
+    document.getElementById("lightbox").style.display="none";
+}
+</script>
+
+</body>
+</html>

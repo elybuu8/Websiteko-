@@ -1,0 +1,413 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elli's Website - Thank You</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#111;
+    color:#fff;
+    overflow-x:hidden;
+    text-align:center;
+}
+
+/* STARS */
+.star{
+    position:absolute;
+    background:#ff0000;
+    border-radius:50%;
+    opacity:.7;
+    animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+    0%{transform:scale(1);opacity:.3;}
+    50%{transform:scale(1.5);opacity:1;}
+    100%{transform:scale(1);opacity:.3;}
+}
+
+/* HEADER */
+header{
+    background:#000;
+    padding:50px 20px 20px;
+    border-bottom:2px solid #ff0000;
+}
+
+header h1{
+    font-family:'Orbitron',sans-serif;
+    font-size:40px;
+    color:#ff0000;
+}
+
+/* NAV */
+nav{margin-top:20px;}
+
+.nav-btn{
+    display:inline-block;
+    margin:8px;
+    padding:12px 28px;
+    background:linear-gradient(135deg,#ff0000,#990000);
+    color:#fff;
+    text-decoration:none;
+    border-radius:8px;
+    font-family:'Orbitron',sans-serif;
+    box-shadow:0 0 5px #ff0000,0 0 10px #ff4d4d;
+}
+
+/* SECTION */
+section{
+    background:rgba(255,0,0,0.08);
+    padding:50px 25px;
+    margin:30px auto;
+    max-width:500px;
+    border-radius:12px;
+    box-shadow:0 0 20px #ff0000;
+}
+
+/* IMAGE GRID */
+.image-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+/* IMAGE CARD */
+.image-card{
+    width:100%;
+    aspect-ratio:1/1;
+    position:relative;
+    overflow:hidden;
+    border-radius:12px;
+    cursor:pointer;
+    box-shadow:0 0 10px #ff0000;
+}
+
+.image-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.4s;
+}
+
+.image-card:hover img{
+    transform:scale(1.1);
+}
+
+/* LIGHTBOX */
+.lightbox{
+    display:none;
+    position:fixed;
+    top:0;left:0;
+    width:100%;height:100%;
+    background:rgba(0,0,0,0.95);
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.lightbox img{
+    max-width:90%;
+    max-height:90%;
+    border-radius:12px;
+    box-shadow:0 0 30px #ff0000;
+    transform:scale(.8);
+    opacity:0;
+    transition:.4s ease;
+}
+
+.lightbox.show img{
+    transform:scale(1);
+    opacity:1;
+}
+
+/* FOOTER */
+footer{
+    background:#000;
+    border-top:2px solid #ff0000;
+    padding:20px;
+    margin-top:40px;
+    font-family:'Orbitron',sans-serif;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+    .image-grid{grid-template-columns:1fr;}
+}
+
+ /* Reset and base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #111;
+      color: #fff;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Stars background */
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: #ff0000;
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: twinkle 2s infinite alternate;
+    }
+
+    @keyframes twinkle {
+      0% { transform: scale(1); opacity: 0.3; }
+      50% { transform: scale(1.5); opacity: 1; }
+      100% { transform: scale(1); opacity: 0.3; }
+    }
+
+    /* Header */
+    header {
+      background: #000;
+      padding: 50px 20px 20px;
+      border-bottom: 2px solid #ff0000;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 40px;
+      color: #ff0000;
+    }
+    
+    section h2 {
+      font-size: 28px;
+      margin: 25px 0 10px 0;
+      color: #ff4d4d;
+      font-weight: 600;
+}
+
+    nav {
+      margin-top: 20px;
+    }
+
+    .nav-btn {
+      position: relative;
+      display: inline-block;
+      margin: 8px;
+      padding: 12px 28px;
+      background: linear-gradient(135deg, #ff0000, #990000);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-family: 'Orbitron', sans-serif;
+      box-shadow: 0 0 5px #ff0000, 0 0 10px #ff4d4d, 0 0 15px rgba(255,0,0,0.5);
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .nav-btn span {
+      position: relative;
+      z-index: 2;
+    }
+
+    .nav-btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -150%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+      transform: skewX(-25deg);
+      animation: shine 2s infinite;
+    }
+
+    @keyframes shine {
+      0% { left: -150%; }
+      100% { left: 150%; }
+    }
+
+    .nav-btn:hover {
+      background: #000;
+      color: #ff0000;
+      transform: translateY(-3px);
+      box-shadow: 0 0 10px #ff0000, 0 0 25px #ff4d4d;
+    }
+
+    /* Section style for containers */
+    section {
+      background: rgba(255,0,0,0.08);
+      padding: 50px 25px;
+      margin: 30px auto;
+      max-width: 900px;
+      border-radius: 12px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 20px #ff0000;
+      transition: 0.3s;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+    }
+
+    section h2 {
+      font-family: 'Orbitron', sans-serif;
+      color: #ff0000;
+      margin-bottom: 15px;
+      text-shadow: 0 0 5px #ff0000, 0 0 15px #ff4d4d;
+    }
+
+    /* Footer */
+    footer {
+      background: #000;
+      padding: 20px;
+      border-top: 2px solid #ff0000;
+      margin-top: 40px;
+      text-align: center;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    /* Columns container for your info */
+    .columns-container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 900px;
+      margin: 30px auto;
+      gap: 20px;
+    }
+
+    /* Individual column style */
+    .column {
+      background: rgba(255,0,0,0.1);
+      padding: 20px;
+      border-radius: 10px;
+      flex: 1 1 250px;
+      box-shadow: 0 0 10px #ff0000;
+    }
+.column h2{
+    color:#ff0000;
+    font-family:'Orbitron',sans-serif;
+    margin-bottom:15px;
+    text-shadow:
+        0 0 3px #ff0000,
+        0 0 6px #ff4d4d;
+}
+
+    /* Favorites grid */
+    .favorites-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+    }
+
+    .favorite-item {
+      background: rgba(255, 0, 0, 0.2);
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 6px #ff0000;
+    }
+
+</style>
+</head>
+
+<body>
+
+<script>
+for(let i=0;i<50;i++){
+    let star=document.createElement('div');
+    star.className='star';
+    star.style.top=Math.random()*100+'%';
+    star.style.left=Math.random()*100+'%';
+    let size=(Math.random()*3+1)+'px';
+    star.style.width=size;
+    star.style.height=size;
+    document.body.appendChild(star);
+}
+</script>
+
+<header>
+<h1>Thank You</h1>
+
+<nav>
+<a href="index.html" class="nav-btn">Home</a>
+<a href="about.html" class="nav-btn">About Me</a>
+<a href="contacts.html" class="nav-btn">Contacts</a>
+<a href="goals.html" class="nav-btn">My Goals</a>
+<a href="envi.html" class="nav-btn">Environment</a>
+<a href="future.html" class="nav-btn">Future Me</a>
+<a href="street.html" class="nav-btn">Street Photography</a>
+<a href="brand.html" class="nav-btn">My brand, My logo</a>
+<a href="thankyou.html" class="nav-btn">Thank You</a>
+</nav>
+</header>
+
+<section>
+
+<div class="image-grid">
+    <div class="image-card"><img src="img1.jpeg"></div>
+    <div class="image-card"><img src="img2.jpeg"></div>
+    <div class="image-card"><img src="img3.jpeg"></div>
+    <div class="image-card"><img src="img4.jpeg"></div>
+</div>
+
+<p style="margin-top:25px;">
+Thank youuu for visiting my website and I hope you've enjoyed your time here!
+</p>
+
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+    <img id="lightbox-img">
+</div>
+
+<footer>
+© 2026 Elli's Website
+</footer>
+
+<script>
+const lightbox=document.getElementById('lightbox');
+const lightboxImg=document.getElementById('lightbox-img');
+const cards=document.querySelectorAll('.image-card img');
+let currentIndex=0;
+
+cards.forEach((img,index)=>{
+    img.addEventListener('click',()=>{
+        currentIndex=index;
+        lightbox.style.display='flex';
+        setTimeout(()=> lightbox.classList.add('show'),10);
+        lightboxImg.src=img.src;
+    });
+});
+
+lightbox.addEventListener('click',()=>{
+    lightbox.classList.remove('show');
+    setTimeout(()=> lightbox.style.display='none',300);
+});
+
+window.addEventListener('keydown',(e)=>{
+    if(lightbox.style.display==='flex'){
+        if(e.key==='ArrowRight'){
+            currentIndex=(currentIndex+1)%cards.length;
+            lightboxImg.src=cards[currentIndex].src;
+        }
+        if(e.key==='ArrowLeft'){
+            currentIndex=(currentIndex-1+cards.length)%cards.length;
+            lightboxImg.src=cards[currentIndex].src;
+        }
+        if(e.key==='Escape'){
+            lightbox.classList.remove('show');
+            setTimeout(()=> lightbox.style.display='none',300);
+        }
+    }
+});
+</script>
+
+</body>
+</html>

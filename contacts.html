@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elli's Website - Contacts/SocMed</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box;}
+
+/* BODY LAYOUT FIX */
+body{
+    font-family:'Poppins',sans-serif;
+    background:#111;
+    color:#fff;
+    overflow-x:hidden;
+    min-height:100vh;       /* full viewport height */
+    display:flex;           /* flex layout for consistent footer */
+    flex-direction:column;  /* header, section, footer stacked */
+}
+
+/* STARS */
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:#ff0000;
+    border-radius:50%;
+    opacity:.7;
+    animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+    0%{transform:scale(1);opacity:.3;}
+    50%{transform:scale(1.5);opacity:1;}
+    100%{transform:scale(1);opacity:.3;}
+}
+
+/* HEADER */
+header{
+    background:#000;
+    padding:50px 20px 20px;
+    border-bottom:2px solid #ff0000;
+    text-align:center;
+}
+
+header h1{
+    font-family:'Orbitron',sans-serif;
+    font-size:40px;
+    color:#ff0000;
+}
+
+/* NAV */
+nav{margin-top:20px;}
+
+.nav-btn{
+    position:relative;
+    display:inline-block;
+    margin:8px;
+    padding:12px 28px;
+    background:linear-gradient(135deg,#ff0000,#990000);
+    color:#fff;
+    text-decoration:none;
+    border-radius:8px;
+    font-family:'Orbitron',sans-serif;
+    box-shadow:0 0 5px #ff0000,0 0 10px #ff4d4d,0 0 15px rgba(255,0,0,.5);
+    overflow:hidden;
+    transition:.3s;
+}
+
+.nav-btn span{position:relative;z-index:2;}
+
+.nav-btn::after{
+    content:'';
+    position:absolute;
+    top:0;
+    left:-150%;
+    width:50%;
+    height:100%;
+    background:linear-gradient(120deg,transparent,rgba(255,255,255,.6),transparent);
+    transform:skewX(-25deg);
+    animation:shine 2s infinite;
+}
+
+@keyframes shine{
+    0%{left:-150%;}
+    100%{left:150%;}
+}
+
+.nav-btn:hover{
+    background:#000;
+    color:#ff0000;
+    transform:translateY(-3px);
+    box-shadow:0 0 10px #ff0000,0 0 25px #ff4d4d;
+}
+
+/* SECTION */
+section{
+    background:rgba(255,0,0,.08);
+    padding:50px 25px;
+    margin:40px auto;
+    max-width:700px;        /* same width as other pages */
+    border-radius:12px;
+    backdrop-filter:blur(6px);
+    box-shadow:0 0 20px #ff0000;
+    text-align:center;
+    flex:1;                 /* makes section expand to fill space */
+}
+
+section h2{
+    font-family:'Orbitron',sans-serif;
+    color:#ff0000;
+    margin-bottom:15px;
+    text-shadow:0 0 5px #ff0000,0 0 15px #ff4d4d;
+}
+
+section p{
+    margin:10px 0;
+    font-size:16px;
+}
+
+/* FOOTER */
+footer{
+    background:#000;
+    padding:20px;
+    border-top:2px solid #ff0000;
+    text-align:center;
+    font-family:'Orbitron',sans-serif;
+}
+
+</style>
+</head>
+
+<body>
+
+<script>
+for(let i=0;i<50;i++){
+    let star=document.createElement('div');
+    star.className='star';
+    star.style.top=Math.random()*100+'%';
+    star.style.left=Math.random()*100+'%';
+    star.style.width=star.style.height=(Math.random()*3+1)+'px';
+    star.style.animationDuration=(Math.random()*2+1)+'s';
+    document.body.appendChild(star);
+}
+</script>
+
+<header>
+<h1>Contacts / Social Media</h1>
+
+<nav>
+<a href="index.html" class="nav-btn"><span>Home</span></a>
+<a href="about.html" class="nav-btn"><span>About Me</span></a>
+<a href="contacts.html" class="nav-btn"><span>Contacts/SocMed</span></a>
+<a href="goals.html" class="nav-btn"><span>My Goals</span></a>
+<a href="envi.html" class="nav-btn"><span>My Environment</span></a>
+<a href="future.html" class="nav-btn"><span>My Future Me</span></a>
+<a href="street.html" class="nav-btn"><span>Street Photography</span></a>
+<a href="brand.html" class="nav-btn"><span>My brand, My logo</span></a>
+<a href="thankyou.html" class="nav-btn"><span>Thank You</span></a>
+</nav>
+</header>
+
+<section>
+
+<h2>CONTACT INFORMATION</h2>
+
+<p>📧 Email: ellison.mercado13@email.com</p>
+<p>📘 Facebook: fb.com/elli mercado</p>
+<p>📸 Instagram: @elybuu</p>
+<p>🎵 TikTok: @meel_0013</p>
+
+<br>
+
+<p>🎮 MLBB: 871127853 (10662)</p>
+<p>🎮 CODM: NoPpleCen</p>
+<p>🎮 Roblox: Zujin_Kaneki13</p>
+
+<br>
+
+<h2>MESSAGE ME</h2>
+
+<p>You can reach me anytime for online games, mathematics, or just to become friends.</p>
+<p>I’m friendly af 😎</p>
+
+</section>
+
+<footer>
+© 2026 Elli's Website
+</footer>
+
+</body>
+</html>

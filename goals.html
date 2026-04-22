@@ -1,0 +1,109 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elli's Website - Goals</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* SAME STYLE */
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;background:#111;color:#fff;overflow-x:hidden;position:relative;}
+
+.star{position:absolute;width:2px;height:2px;background:#ff0000;border-radius:50%;opacity:.7;animation:twinkle 2s infinite alternate;}
+
+@keyframes twinkle{0%{transform:scale(1);opacity:.3;}50%{transform:scale(1.5);opacity:1;}100%{transform:scale(1);opacity:.3;}}
+
+header{background:#000;padding:50px 20px 20px;border-bottom:2px solid #ff0000;text-align:center;}
+
+header h1{font-family:'Orbitron';font-size:40px;color:#ff0000;}
+
+nav{margin-top:20px;}
+
+.nav-btn{position:relative;display:inline-block;margin:8px;padding:12px 28px;background:linear-gradient(135deg,#ff0000,#990000);color:#fff;text-decoration:none;border-radius:8px;font-family:'Orbitron';box-shadow:0 0 5px #ff0000,0 0 10px #ff4d4d,0 0 15px rgba(255,0,0,.5);overflow:hidden;transition:.3s;}
+
+.nav-btn span{position:relative;z-index:2;}
+
+.nav-btn::after{content:'';position:absolute;top:0;left:-150%;width:50%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.6),transparent);transform:skewX(-25deg);animation:shine 2s infinite;}
+
+@keyframes shine{0%{left:-150%;}100%{left:150%;}}
+
+.nav-btn:hover{background:#000;color:#ff0000;transform:translateY(-3px);box-shadow:0 0 10px #ff0000,0 0 25px #ff4d4d;}
+
+section{background:rgba(255,0,0,.08);padding:50px 25px;margin:30px auto;max-width:900px;border-radius:12px;backdrop-filter:blur(6px);box-shadow:0 0 20px #ff0000;transition:.3s;}
+
+section:hover{transform:translateY(-5px);}
+
+section h2{font-family:'Orbitron';color:#ff0000;margin-bottom:15px;text-shadow:0 0 5px #ff0000,0 0 15px #ff4d4d;}
+
+footer{background:#000;padding:20px;border-top:2px solid #ff0000;margin-top:40px;text-align:center;font-family:'Orbitron';}
+
+</style>
+</head>
+
+<body>
+
+<script>
+for(let i=0;i<50;i++){
+let star=document.createElement('div');
+star.className='star';
+star.style.top=Math.random()*100+'%';
+star.style.left=Math.random()*100+'%';
+star.style.width=star.style.height=(Math.random()*3+1)+'px';
+star.style.animationDuration=(Math.random()*2+1)+'s';
+document.body.appendChild(star);
+}
+</script>
+
+<header>
+
+<h1>My Goals</h1>
+
+<nav>
+<a href="index.html" class="nav-btn"><span>Home</span></a>
+<a href="about.html" class="nav-btn"><span>About Me</span></a>
+<a href="contacts.html" class="nav-btn"><span>Contacts/SocMed</span></a>
+<a href="goals.html" class="nav-btn"><span>My Goals</span></a>
+<a href="envi.html" class="nav-btn"><span>My Environment</span></a>
+<a href="future.html" class="nav-btn"><span>My Future Me</span></a>
+<a href="street.hmtl" class="nav-btn"><span>Street Photography</span></a>
+<a href="brand.html" class="nav-btn"><span>My brand, My logo</span></a>
+<a href="thankyou.html" class="nav-btn"><span>Thank You</span></a>
+</nav>
+
+</header>
+
+<section>
+<p><strong>ACADEMICALLY</strong></p>
+<p>- Attain Dean's Lister or President's Lister in my 4yrs course here in SMMC</p>
+<p>- Achieve 1.0 on some subjects in 2nd year to 4th year</p>
+<p>- Graduate with Cum Laude/Magna Cum Laude/Summa Cum Laude</p>
+<p><strong>FINANCIALLY</strong></p>
+<p>- Have a job that has a minimum of 15k salary per month</p>
+<p>- Get out of my current financial situation</p>
+<p>- Never have to eat salt/soy again</p>
+<p><strong>LIFE-GOALS</strong></p>
+<p>- Marry the Girl that I love in Batanes</p>
+<p>- Buy a Ninja 400cc or a MK4 Supra</p>
+<p>- Be able to buy my own house and finally leave my father's side</p>
+<p><strong>GAME GOALS</strong></p>
+<p>- Achieve Top GLobal Lesley</p>
+<p>- Get Dragon Fruit (BLOXFRUITS)</p>
+<p>- Achieve Top Global Bounty in BLOXFRUITS (Currently : Top 125)</p>
+
+</section>
+
+<footer>
+© 2026 Elli's Website
+</footer>
+
+</body>
+</html>

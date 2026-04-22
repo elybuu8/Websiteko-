@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elli's Website - Home</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#111;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* HEADER */
+header{
+    background:#000;
+    padding:50px 20px 20px;
+    border-bottom:2px solid #ff0000;
+    text-align:center;
+}
+header h1{
+    font-family:'Orbitron';
+    font-size:40px;
+    color:#ff0000;
+}
+
+/* NAV */
+nav{margin-top:20px;}
+.nav-btn{
+    display:inline-block;
+    margin:8px;
+    padding:12px 28px;
+    background:linear-gradient(135deg,#ff0000,#990000);
+    color:#fff;
+    text-decoration:none;
+    border-radius:8px;
+    font-family:'Orbitron';
+    transition:.3s;
+}
+.nav-btn:hover{
+    background:#000;
+    color:#ff0000;
+    transform:translateY(-3px);
+}
+
+/* MAIN LAYOUT */
+.main-content{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    max-width:1100px;
+    margin:40px auto;
+    padding:20px;
+}
+
+/* GALLERY LEFT */
+.gallery{
+    flex:1;
+    max-width:450px;
+    background:rgba(255,0,0,0.05);
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 0 20px #ff0000;
+}
+.gallery h2{
+    font-family:'Orbitron';
+    color:#ff0000;
+    margin-bottom:15px;
+    text-align:center;
+}
+.gallery-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+.gallery-grid img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 0 8px #ff0000;
+}
+.gallery-grid img:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 15px #ff0000,0 0 25px #ff4d4d;
+}
+
+/* INTRO BOX RIGHT */
+.intro{
+    flex:1;
+    max-width:450px;
+    background:rgba(255,0,0,0.05);
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 0 20px #ff0000;
+}
+.intro h2{
+    font-family:'Orbitron';
+    color:#ff0000;
+    margin-bottom:15px;
+}
+.intro p{
+    line-height:1.6;
+    font-size:15px;
+}
+
+/* LIGHTBOX */
+.lightbox{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.9);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+}
+.lightbox img{
+    max-width:90%;
+    max-height:90%;
+    border-radius:10px;
+    box-shadow:0 0 30px #ff0000;
+}
+
+/* FOOTER */
+footer{
+    background:#000;
+    padding:20px;
+    border-top:2px solid #ff0000;
+    margin-top:40px;
+    text-align:center;
+    font-family:'Orbitron';
+}
+
+/* RESPONSIVE */
+@media(max-width:800px){
+    .main-content{
+        flex-direction:column;
+        align-items:center;
+    }
+}
+
+ /* Reset and base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #111;
+      color: #fff;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Stars background */
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: #ff0000;
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: twinkle 2s infinite alternate;
+    }
+
+    @keyframes twinkle {
+      0% { transform: scale(1); opacity: 0.3; }
+      50% { transform: scale(1.5); opacity: 1; }
+      100% { transform: scale(1); opacity: 0.3; }
+    }
+
+    /* Header */
+    header {
+      background: #000;
+      padding: 50px 20px 20px;
+      border-bottom: 2px solid #ff0000;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 40px;
+      color: #ff0000;
+    }
+    
+    section h2 {
+      font-size: 28px;
+      margin: 25px 0 10px 0;
+      color: #ff4d4d;
+      font-weight: 600;
+}
+
+    nav {
+      margin-top: 20px;
+    }
+
+    .nav-btn {
+      position: relative;
+      display: inline-block;
+      margin: 8px;
+      padding: 12px 28px;
+      background: linear-gradient(135deg, #ff0000, #990000);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-family: 'Orbitron', sans-serif;
+      box-shadow: 0 0 5px #ff0000, 0 0 10px #ff4d4d, 0 0 15px rgba(255,0,0,0.5);
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .nav-btn span {
+      position: relative;
+      z-index: 2;
+    }
+
+    .nav-btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -150%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+      transform: skewX(-25deg);
+      animation: shine 2s infinite;
+    }
+
+    @keyframes shine {
+      0% { left: -150%; }
+      100% { left: 150%; }
+    }
+
+    .nav-btn:hover {
+      background: #000;
+      color: #ff0000;
+      transform: translateY(-3px);
+      box-shadow: 0 0 10px #ff0000, 0 0 25px #ff4d4d;
+    }
+
+    /* Section style for containers */
+    section {
+      background: rgba(255,0,0,0.08);
+      padding: 50px 25px;
+      margin: 30px auto;
+      max-width: 900px;
+      border-radius: 12px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 20px #ff0000;
+      transition: 0.3s;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+    }
+
+    section h2 {
+      font-family: 'Orbitron', sans-serif;
+      color: #ff0000;
+      margin-bottom: 15px;
+      text-shadow: 0 0 5px #ff0000, 0 0 15px #ff4d4d;
+    }
+
+    /* Footer */
+    footer {
+      background: #000;
+      padding: 20px;
+      border-top: 2px solid #ff0000;
+      margin-top: 40px;
+      text-align: center;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    /* Columns container for your info */
+    .columns-container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 900px;
+      margin: 30px auto;
+      gap: 20px;
+    }
+
+    /* Individual column style */
+    .column {
+      background: rgba(255,0,0,0.1);
+      padding: 20px;
+      border-radius: 10px;
+      flex: 1 1 250px;
+      box-shadow: 0 0 10px #ff0000;
+    }
+.column h2{
+    color:#ff0000;
+    font-family:'Orbitron',sans-serif;
+    margin-bottom:15px;
+    text-shadow:
+        0 0 3px #ff0000,
+        0 0 6px #ff4d4d;
+}
+
+    /* Favorites grid */
+    .favorites-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+    }
+
+    .favorite-item {
+      background: rgba(255, 0, 0, 0.2);
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 6px #ff0000;
+    }
+
+</style>
+</head>
+
+<body>
+
+<script>
+  for(let i=0; i < 50; i++){
+    let star = document.createElement('div');
+    star.className = 'star';
+    star.style.top = Math.random()*100 + '%';
+    star.style.left = Math.random()*100 + '%';
+    star.style.width = star.style.height = (Math.random()*3 + 1) + 'px';
+    star.style.animationDuration = (Math.random()*2 + 1) + 's';
+    document.body.appendChild(star);
+  }
+</script>
+
+<header>
+    <h1>Welcomee!!!</h1>
+    <nav>
+        <a href="index.html" class="nav-btn">Home</a>
+        <a href="about.html" class="nav-btn">About Me</a>
+        <a href="contacts.html" class="nav-btn">Contacts / SocMed</a>
+        <a href="goals.html" class="nav-btn">My Goals</a>
+        <a href="envi.html" class="nav-btn">My Environment</a>
+        <a href="future.html" class="nav-btn">My Future Me</a>
+        <a href="street.html" class="nav-btn">Street Photography</a>
+        <a href="brand.html" class="nav-btn">My Brand, My Logo</a>
+        <a href="thankyou.html" class="nav-btn">Thank You</a>
+    </nav>
+</header>
+
+<!-- MAIN CONTENT -->
+<div class="main-content">
+
+    <!-- LEFT: GALLERY -->
+    <section class="gallery">
+        <h2>Pogi pics ko HAHAHAHA</h2>
+        <div class="gallery-grid">
+            <img src="I.jpg" onclick="openLightbox(this.src)">
+            <img src="Im.jpg" onclick="openLightbox(this.src)">
+            <img src="Ima.jpg" onclick="openLightbox(this.src)">
+            <img src="Imag.jpg" onclick="openLightbox(this.src)">
+        </div>
+    </section>
+
+    <!-- RIGHT: INTRO -->
+    <section class="intro">
+        <h2></h2>
+        <p>
+            Hi! I’m Elli. Welcome to my personal website where you'll find all the stuffs
+that'll let you know me better :>.
+        </p>
+        <br>
+        <p>
+            Enjoy reading and scrounging through my website and I hope that you enjoy fiddling through the 
+website that I made.
+        </p>
+<br>
+        <p>
+	    Oo nga pala, please don't use any of these informations and spread it into other public sites since 
+this is only for a project and I hope na di dadating sa punto na need pa magkaron ng gulo dahil ipagkalat yung informations ko >:(
+        </p>
+       
+    </section>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img">
+</div>
+
+<footer>
+    &copy; 2026 Elli's Website
+</footer>
+
+<script>
+function openLightbox(src){
+    document.getElementById("lightbox").style.display="flex";
+    document.getElementById("lightbox-img").src=src;
+}
+function closeLightbox(){
+    document.getElementById("lightbox").style.display="none";
+}
+</script>
+
+</body>
+</html>

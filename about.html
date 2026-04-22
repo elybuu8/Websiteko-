@@ -1,0 +1,298 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Elli's Website - About me</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Your CSS (remove or update the href if you have a real external stylesheet) -->
+  <!-- <link rel="stylesheet" href="path/to/your/style.css"> -->
+
+  <style>
+    /* Reset and base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #111;
+      color: #fff;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Stars background */
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: #ff0000;
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: twinkle 2s infinite alternate;
+    }
+
+    @keyframes twinkle {
+      0% { transform: scale(1); opacity: 0.3; }
+      50% { transform: scale(1.5); opacity: 1; }
+      100% { transform: scale(1); opacity: 0.3; }
+    }
+
+    /* Header */
+    header {
+      background: #000;
+      padding: 50px 20px 20px;
+      border-bottom: 2px solid #ff0000;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 40px;
+      color: #ff0000;
+    }
+    
+    section h2 {
+      font-size: 28px;
+      margin: 25px 0 10px 0;
+      color: #ff4d4d;
+      font-weight: 600;
+}
+
+    nav {
+      margin-top: 20px;
+    }
+
+    .nav-btn {
+      position: relative;
+      display: inline-block;
+      margin: 8px;
+      padding: 12px 28px;
+      background: linear-gradient(135deg, #ff0000, #990000);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-family: 'Orbitron', sans-serif;
+      box-shadow: 0 0 5px #ff0000, 0 0 10px #ff4d4d, 0 0 15px rgba(255,0,0,0.5);
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .nav-btn span {
+      position: relative;
+      z-index: 2;
+    }
+
+    .nav-btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -150%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+      transform: skewX(-25deg);
+      animation: shine 2s infinite;
+    }
+
+    @keyframes shine {
+      0% { left: -150%; }
+      100% { left: 150%; }
+    }
+
+    .nav-btn:hover {
+      background: #000;
+      color: #ff0000;
+      transform: translateY(-3px);
+      box-shadow: 0 0 10px #ff0000, 0 0 25px #ff4d4d;
+    }
+
+    /* Section style for containers */
+    section {
+      background: rgba(255,0,0,0.08);
+      padding: 50px 25px;
+      margin: 30px auto;
+      max-width: 900px;
+      border-radius: 12px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 20px #ff0000;
+      transition: 0.3s;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+    }
+
+    section h2 {
+      font-family: 'Orbitron', sans-serif;
+      color: #ff0000;
+      margin-bottom: 15px;
+      text-shadow: 0 0 5px #ff0000, 0 0 15px #ff4d4d;
+    }
+
+    /* Footer */
+    footer {
+      background: #000;
+      padding: 20px;
+      border-top: 2px solid #ff0000;
+      margin-top: 40px;
+      text-align: center;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    /* Columns container for your info */
+    .columns-container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 900px;
+      margin: 30px auto;
+      gap: 20px;
+    }
+
+    /* Individual column style */
+    .column {
+      background: rgba(255,0,0,0.1);
+      padding: 20px;
+      border-radius: 10px;
+      flex: 1 1 250px;
+      box-shadow: 0 0 10px #ff0000;
+    }
+.column h2{
+    color:#ff0000;
+    font-family:'Orbitron',sans-serif;
+    margin-bottom:15px;
+    text-shadow:
+        0 0 3px #ff0000,
+        0 0 6px #ff4d4d;
+}
+
+    /* Favorites grid */
+    .favorites-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+    }
+
+    .favorite-item {
+      background: rgba(255, 0, 0, 0.2);
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 6px #ff0000;
+    }
+  </style>
+</head>
+
+<body>
+
+<script>
+  for(let i=0; i < 50; i++){
+    let star = document.createElement('div');
+    star.className = 'star';
+    star.style.top = Math.random()*100 + '%';
+    star.style.left = Math.random()*100 + '%';
+    star.style.width = star.style.height = (Math.random()*3 + 1) + 'px';
+    star.style.animationDuration = (Math.random()*2 + 1) + 's';
+    document.body.appendChild(star);
+  }
+</script>
+
+<header>
+  <h1>About Me</h1>
+  <nav>
+    <a href="index.html" class="nav-btn"><span>Home</span></a>
+    <a href="about.html" class="nav-btn"><span>About Me</span></a>
+    <a href="contacts.html" class="nav-btn"><span>Contacts/SocMed</span></a>
+    <a href="goals.html" class="nav-btn"><span>My Goals</span></a>
+    <a href="envi.html" class="nav-btn"><span>My Environment</span></a>
+    <a href="future.html" class="nav-btn"><span>My Future Me</span></a>
+    <a href="street.html" class="nav-btn"><span>Street Photography</span></a>
+    <a href="brand.html" class="nav-btn"><span>My brand, My logo</span></a>
+    <a href="thankyou.html" class="nav-btn"><span>Thank You</span></a>
+  </nav>
+</header>
+
+<div class="columns-container">
+
+  <div class="column">
+    <h2>PERSONAL INFORMATION</h2>
+    <p><strong>Full Name:</strong> Ellison Ford A. Mercado</p>
+    <p><strong>Father’s Name:</strong> Jholen M. Mercado</p>
+    <p><strong>Mother’s Name:</strong> Evelyn C. Aguilar</p>
+    <p><strong>Date of Birth:</strong> 09-11-2007</p>
+    <p><strong>Age:</strong> 18</p>
+    <p><strong>Gender:</strong> Male</p>
+    <p><strong>Height:</strong> 183cm</p>
+    <p><strong>Weight:</strong> 87kg</p>
+    <p><strong>Status:</strong> Nanliligaw &gt;-&lt;</p>
+    <p><strong>Nationality:</strong> Filipino</p>
+    <p><strong>Religion:</strong> Roman Catholic</p>
+    <p><strong>Languages Known:</strong> Tagalog, English, Mada, Japanese, Mandarin, Bicol</p>
+  </div>
+
+  <div class="column">
+    <h2>HOBBIES</h2>
+    <p>Drawing</p>
+    <p>Cooking</p>
+    <p>Crafting</p>
+    <p>Biking</p>
+    <p>Exploring</p>
+    <p>Online Games</p>
+    <p>Gardening</p>
+    <p>Coding</p>
+    <p>Cleaning</p>
+    <p>Photography</p>
+  </div>
+
+  <div class="column">
+    <h2>SPORTS</h2>
+    <p>Basketball</p>
+    <p>Arnis</p>
+    <p>Karate</p>
+    <p>Volleyball</p>
+    <p>Chess</p>
+    <p>Badminton</p>
+    <p>Pocket Billiards</p>
+    <h2>E-SPORTS</h2>
+    <p>MLBB</p>
+    <p>CODM</p>
+    <p>CLASH OF CLANS</p>
+    <p>BOOMBEACH</p>
+    <p>CSGO2</p>
+    <p>COD:WARZONE</p>
+    <p>ARENA BREAKOUT</p>
+    <p>POINT BLANK</p>
+    <p>CROSSFIRE</p>
+    <p>LOL</p>
+  </div>
+
+  <div class="column">
+    <h2>FAVORITE SONGS</h2>
+    <div class="favorites-grid">
+      <div class="favorite-item">Demonyo Redefined – Juan Karlos</div>
+      <div class="favorite-item">Kalapastangan – Fitterkarma</div>
+      <div class="favorite-item">Synesthesia – Mayonnaise</div>
+      <div class="favorite-item">Sagip (Hanggang Dulo) – Jan Roberts</div>
+    </div>
+  </div>
+
+  <div class="column">
+    <h2>FAVORITE ANIMES</h2>
+    <div class="favorites-grid">
+      <div class="favorite-item">Jujutsu Kaisen</div>
+      <div class="favorite-item">Boku no Hero Academia</div>
+      <div class="favorite-item">Kimetsu no Yaiba</div>
+      <div class="favorite-item">Shingeki no Kyojin</div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 Elli's Website
+</footer>
+
+</body>
+</html>
